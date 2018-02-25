@@ -1,0 +1,5 @@
+<%= simple_form_for(@message) do |f| %>
+ <%= f.input :title, label: "あなたのペットの種類は？" %>
+ <%= f.input :description, label: "ペットの特徴を種類を書いてみよう。" %>
+ <%= f.button :submit , '投稿する', :class => 'btn btn-success'%>
+<% end %>

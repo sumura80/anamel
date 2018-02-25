@@ -1,0 +1,45 @@
+
+<% if user_signed_in? && @messages.blank? %>
+	
+	 	<div class="jumbotron">
+	 		<h2 class="index_title　index_header">まだ投稿がありません。</h2>
+			<%=  image_tag 'anamel_pic.jpg', :size => '380x180', class: 'img-responsive' %>
+			<br>
+			<p>最初の投稿者になってみませんか？</p>
+			<p>世界のみんなに名前を募集してみましょう！</p>
+			<p><%= link_to "ペットの名前を募集する", new_message_path, class: "btn btn-success" %></p>
+ 		</div>
+<% end %>
+
+<% if user_signed_in? && !@messages.blank? %>
+	<%=  image_tag 'anamel_pic.jpg', :size => '190x90', class: 'img-responsive' %>
+	<h2>投稿があります。今すぐ確認してみましょう！</h2>
+<% end %>
+
+ 	<% if !user_signed_in? %>
+ 	<div class="jumbotron">
+ 		<h2 class="index_title　index_header">ペットの名前を募集・投稿しよう！</h2>
+		<%=  image_tag 'anamel_pic.jpg', :size => '380x180', class: 'img-responsive' %>
+		<br>
+		<p>ユーザー登録後、自分のペットの名前と特徴をかいて、世界中から名前を募集してみませんか？</p>
+		<p>ペットに特別な名前をつけてみませんか？世界中の人があなたを待っています。</p>
+		<p>
+			<%= link_to "ユーザー登録", new_user_registration_path, :class =>'btn btn-primary' %>
+			<%= link_to "ログイン", new_user_session_path, :class =>'btn btn-default' %>
+		</p>
+ 	</div>
+<% end %>
+
+<% @messages.each do |message| %>
+	<div class="col-sm-6 col-md-4">
+		<div class="message-box">
+			<h2 class="message-title"><%= message.title %></h2>
+			<%= link_to "View Message", message_path(message), :class =>'btn btn-default' %>
+		</div>
+	</div>
+
+
+	
+<% end %>
+
+ 

@@ -1,0 +1,25 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="message-content">
+		<h2><%= @message.title %></h2>
+		<p><%= @message.user.email %>さんによって <%= time_ago_in_words(@message.created_at) %>前に投稿されました。</p>
+		<p class="message-sentence"><%= @message.description %></p>
+		<!-- add time stamps here. wh ocreatedand when -->
+		<br>
+		<h3 class="comment-header">コメント:</h3>
+		<%= render @message.comments %>
+
+		 
+		<h3 class="reply-message-section">名前を提案してみる</h3>
+		<%= render 'comments/form' %>
+
+		<div class="btn-group">
+			<%= link_to "ホームに戻る", root_path, class: 'btn btn-default btn-each' %>
+			<% if user_signed_in? %>
+			 <% if @message.user_id == current_user.id %>
+				<%= link_to "編集", edit_message_path(@message), class: 'btn btn-default btn-each' %>
+				<%= link_to "削除", message_path(@message), method: :delete, data:{confirm: "Are you sure?"}, class: 'btn btn-danger btn-each' %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

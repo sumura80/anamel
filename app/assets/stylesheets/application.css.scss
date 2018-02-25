@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+//CSS for this app
+
+
+body {
+	
+}
+
+.message-box{
+	box-sizing: border-box;
+	background-color: #3d5c5c;
+	height: 160px;
+	margin: 20px 5px;
+	padding: 15px 10px 10px 10px;
+	border-bottom: 5px solid #009999;
+}
+
+.message-title{
+	color: #FFF;
+}
+
+
+.message-content{
+	box-sizing: border-box;
+	background-color: #009999;
+	padding: 25px;
+	color: #FFF;
+}
+
+.message-sentence{
+	line-height: 1.5;
+	font-size: 22px;
+}
+
+.reply-message-section{
+	margin-top:50px;
+}
+
+.btn-group{
+	margin-top:20px;
+}
+
+.btn-each{
+	margin:0 5px;
+}
+
+.comment{
+	border-bottom: 2px solid #FFF;
+	margin-bottom:20px;
+	margin-top:30px;
+
+	font-size:22px;
+}
+
+.comment-posted{
+	font-size:15px;
+}
+
+.comment-header{
+	font-size: 26px;
+}
+
+.button-cover{
+	margin:20px 2px;
+}
+
+.index_title{
+	margin-top:35px;	
+}
+
+.jumbotron{
+	background-color: #e6f2ff;
+}
+
+ 
